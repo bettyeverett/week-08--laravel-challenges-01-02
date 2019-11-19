@@ -19,6 +19,13 @@ class Book
 
     }
 
+    public function title()
+    {
+
+        return $this->title;
+
+    }
+
     public function read($noOfPages)
     {
 
