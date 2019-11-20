@@ -7,38 +7,24 @@ namespace App\Library;
 class Shelf
 {
 
-    private $booksOnShelf; // = [];
-
-    public function __construct()
-    {
-
-        $this->booksOnShelf = collect();
-
-    }
+    private $booksOnShelf = [];
 
     public function addBook(Book $book)
     {
 
-        $this->booksOnShelf->push($book);
+        $this->booksOnShelf[] = $book;
         return $this;
-
-        // $this->booksOnShelf[] = $book;
-        // return $this;
 
     }
 
     public function titles()
     {
 
-        return $this->booksOnShelf->map(function($book) {
+        $titles = array_map(function($book) {
             return $book->title();
-        })->all();
+        }, $this->booksOnShelf);
 
-        // $titles = array_map(function($book) {
-        //     return $book->title;
-        // }), $this $booksOnShelf;
-
-        // return $titles
+        return $titles;
 
     }
 

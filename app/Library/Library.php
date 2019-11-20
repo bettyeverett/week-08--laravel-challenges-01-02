@@ -23,7 +23,7 @@ class Library
         $titles = [];
 
         foreach($this->shelves as $shelf) {
-            $titles[] = $shelf->titles();
+            $titles = array_merge($titles, $shelf->titles());
         }
 
         return $titles;
