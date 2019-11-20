@@ -7,7 +7,7 @@ namespace App;
 class Hello
 {
 
-    private $string;
+    // private $string;   Don't even need to declare parameter, as this isn't used again.
 
     public function hello($string)
     {

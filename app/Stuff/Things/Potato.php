@@ -7,11 +7,12 @@ namespace App\Stuff\Things;
 class Potato
 {
 
+    // Keeping track of watering
     private $water = 0;
 
     public function water()
     {
-
+        // Adding 1 to the tracker property
         $this->water += 1;
         return $this;
 
@@ -20,11 +21,13 @@ class Potato
     public function hasGrown()
     {
 
-        if($this->water >= 5) {
-            return true;
-        } else {
-            return false;
-        }
+        // if($this->water >= 5) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+
+        return $this->water >= 5; // Check if the potato has been watered 5 or more times and has grown.
 
     }
 

@@ -7,7 +7,7 @@ namespace App\Library;
 class Shelf
 {
 
-    private $booksOnShelf;
+    private $booksOnShelf; // = [];
 
     public function __construct()
     {
@@ -22,6 +22,9 @@ class Shelf
         $this->booksOnShelf->push($book);
         return $this;
 
+        // $this->booksOnShelf[] = $book;
+        // return $this;
+
     }
 
     public function titles()
@@ -30,6 +33,12 @@ class Shelf
         return $this->booksOnShelf->map(function($book) {
             return $book->title();
         })->all();
+
+        // $titles = array_map(function($book) {
+        //     return $book->title;
+        // }), $this $booksOnShelf;
+
+        // return $titles
 
     }
 
